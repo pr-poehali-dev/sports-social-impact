@@ -39,69 +39,47 @@ const STATS_DATA = [
 const SOURCES = [
   {
     id: 1,
-    authors: "Иванов А. В., Петрова М. Н.",
+    authors: "ВЦИОМ (Всероссийский центр изучения общественного мнения)",
     year: 2023,
-    title: "Цифровая трансформация высшего образования: вызовы и перспективы",
-    journal: "Педагогика и психология образования",
-    volume: "№ 4",
-    pages: "С. 12–28",
-    type: "Статья",
-    url: "#",
+    title: "Спорт в жизни россиян",
+    journal: "Официальный сайт ВЦИОМ",
+    volume: "",
+    pages: "Режим доступа: wciom.ru",
+    type: "Статистика",
+    url: "https://wciom.ru",
   },
   {
     id: 2,
-    authors: "Смирнов Д. К.",
-    year: 2022,
-    title: "Адаптивные образовательные технологии в современном университете",
-    journal: "Высшее образование в России",
-    volume: "Т. 31, № 6",
-    pages: "С. 45–61",
-    type: "Статья",
-    url: "#",
+    authors: "Министерство спорта Российской Федерации",
+    year: 2024,
+    title: "Ежегодный доклад о развитии физической культуры и спорта в Российской Федерации",
+    journal: "Официальный сайт Минспорта России",
+    volume: "",
+    pages: "Режим доступа: minsport.gov.ru",
+    type: "Доклад",
+    url: "https://minsport.gov.ru",
   },
   {
     id: 3,
-    authors: "Козлова Е. С., Фёдоров П. Р., Новикова Т. Л.",
+    authors: "Федеральная служба государственной статистики (Росстат)",
     year: 2023,
-    title: "Инклюзивность как принцип организации образовательного пространства",
-    journal: "Социология образования",
-    volume: "№ 2",
-    pages: "С. 88–104",
-    type: "Статья",
-    url: "#",
+    title: "Уровень жизни населения. Физическая активность и занятия спортом",
+    journal: "Официальный сайт Росстата",
+    volume: "",
+    pages: "Режим доступа: rosstat.gov.ru",
+    type: "Статистика",
+    url: "https://rosstat.gov.ru",
   },
   {
     id: 4,
-    authors: "Романов В. А.",
-    year: 2021,
-    title: "Методология исследования качества образования",
-    journal: "— М.: Издательство МГУ",
-    volume: "",
-    pages: "312 с.",
-    type: "Монография",
-    url: "#",
-  },
-  {
-    id: 5,
-    authors: "UNESCO",
-    year: 2022,
-    title: "Global Education Monitoring Report 2022",
-    journal: "UNESCO Publishing",
-    volume: "",
-    pages: "480 p.",
-    type: "Доклад",
-    url: "https://en.unesco.org/gem-report",
-  },
-  {
-    id: 6,
-    authors: "Быкова О. П., Шевченко И. В.",
+    authors: "ФОМ (Фонд «Общественное мнение»)",
     year: 2023,
-    title: "Проектное обучение как инструмент развития профессиональных компетенций",
-    journal: "Вопросы образования",
-    volume: "№ 1",
-    pages: "С. 33–52",
-    type: "Статья",
-    url: "#",
+    title: "Спорт и здоровье россиян",
+    journal: "Официальный сайт ФОМ",
+    volume: "",
+    pages: "Режим доступа: fom.ru",
+    type: "Статистика",
+    url: "https://fom.ru",
   },
 ];
 
@@ -238,7 +216,7 @@ function ResultsSection() {
 
 function SourcesSection() {
   const [filter, setFilter] = useState("Все");
-  const types = ["Все", "Статья", "Монография", "Доклад"];
+  const types = ["Все", "Статистика", "Доклад"];
   const filtered = filter === "Все" ? SOURCES : SOURCES.filter((s) => s.type === filter);
 
   return (
@@ -489,7 +467,7 @@ export default function Index() {
             { value: "87%", label: "Цифровизация", icon: "Monitor" },
             { value: "81%", label: "Проектное обуч.", icon: "TrendingUp" },
             { value: "10", label: "Блоков данных", icon: "BarChart2" },
-            { value: "6", label: "Источников", icon: "BookMarked" },
+            { value: "4", label: "Источников", icon: "BookMarked" },
           ].map((card, i) => (
             <div
               key={i}
